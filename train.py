@@ -136,9 +136,9 @@ def score_test_images(model: YOLO, names: list[str]) -> pd.DataFrame:
     confidence for any rotten box (0 if it found none)."""
     rotten_ids = {i for i, n in enumerate(names) if costs.POSITIVE in n}
     img_dir, lbl_dir = DATA_DIR / "test" / "images", DATA_DIR / "test" / "labels"
-    paths = sorted(str(p) for p in img_dir.iterdir() if p.suffix.lower() in IMG_EXTS)
     rows = []
-    for res in model.predict(source=paths, stream=True, conf=0.001, imgsz=IMG_SIZE, verbose=False):
+    # Pass the folder, not a list: a list is treated as ONE batch and runs out of memory.
+    for res in model.predict(source=str(img_dir), stream=True, conf=0.001, imgsz=IMG_SIZE, verbose=False):
         cls = res.boxes.cls.cpu().numpy().astype(int)
         conf = res.boxes.conf.cpu().numpy()
         mask = np.isin(cls, list(rotten_ids))
