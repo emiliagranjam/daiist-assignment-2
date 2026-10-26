@@ -4,17 +4,17 @@
     "epochs": 20,
     "imgsz": 640,
     "seed": 0,
-    "trained_on_gpu": true,
+    "trained_on_gpu": false,
     "dataset": "project-irggm/-w4yds v1"
   },
   "finetuned": {
-    "map50": 0.9637616517680353,
-    "map50_95": 0.8280868820963747
+    "map50": 0.9636172262077665,
+    "map50_95": 0.8279856975658545
   },
   "coco_zero_shot": {
-    "fruit_type_map50": 0.4422987437968713,
+    "fruit_type_map50": 0.44187655371218043,
     "fruit_type_ap50": {
-      "banana": 0.41,
+      "banana": 0.4088,
       "apple": 0.415,
       "orange": 0.5019
     },

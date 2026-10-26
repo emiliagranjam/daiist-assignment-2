@@ -18,13 +18,13 @@ import numpy as np
 POSITIVE = "rotten"  # every class whose name contains this word is "positive"
 
 # ---- Fill these in (euros per fruit unless stated) -------------------------
-COST_FALSE_POSITIVE = None  # a good fruit is discarded
-COST_FALSE_NEGATIVE = None  # a rotten fruit is shipped to the customer
-HOURLY_WAGE = None          # cost of one reviewer per hour, in euros
-REVIEW_SECONDS = None       # seconds a person needs to check one fruit
-BASE_RATE = None            # share of fruit that is really rotten on the line (0-1)
-CASES_PER_DAY = None        # fruits passing the camera per day
-MAX_REVIEW_SHARE = None     # optional: max share of cases your reviewers can handle
+COST_FALSE_POSITIVE = 0.20
+COST_FALSE_NEGATIVE = 2.00
+HOURLY_WAGE = 12.50
+REVIEW_SECONDS = 5
+BASE_RATE = 0.03
+CASES_PER_DAY = 100_000
+MAX_REVIEW_SHARE = None
 # -----------------------------------------------------------------------------
 
 
